@@ -54,7 +54,7 @@ def User_Info(bot):
 
             embed = discord.Embed(title=f"Información de {member.name}", color=color)
 
-            if member is None:
+            if member.avatar:
                 embed.set_thumbnail(url=member.avatar.url)
 
             # Información básica

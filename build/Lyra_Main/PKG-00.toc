@@ -165,37 +165,37 @@
    'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\python3.dll',
    'BINARY'),
   ('base_library.zip', 'C:\\Lyra\\build\\Lyra_Main\\base_library.zip', 'DATA'),
-  ('certifi\\py.typed',
-   'C:\\Users\\Angel '
-   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\certifi\\py.typed',
-   'DATA'),
   ('certifi\\cacert.pem',
    'C:\\Users\\Angel '
    'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\certifi\\cacert.pem',
+   'DATA'),
+  ('certifi\\py.typed',
+   'C:\\Users\\Angel '
+   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\certifi\\py.typed',
    'DATA'),
   ('nacl\\py.typed',
    'C:\\Users\\Angel '
    'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\nacl\\py.typed',
    'DATA'),
-  ('attrs-23.1.0.dist-info\\WHEEL',
+  ('attrs-23.1.0.dist-info\\INSTALLER',
    'C:\\Users\\Angel '
-   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\WHEEL',
+   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\INSTALLER',
    'DATA'),
   ('attrs-23.1.0.dist-info\\licenses\\LICENSE',
    'C:\\Users\\Angel '
    'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\licenses\\LICENSE',
    'DATA'),
-  ('attrs-23.1.0.dist-info\\RECORD',
+  ('attrs-23.1.0.dist-info\\WHEEL',
    'C:\\Users\\Angel '
-   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\RECORD',
+   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\WHEEL',
    'DATA'),
   ('attrs-23.1.0.dist-info\\METADATA',
    'C:\\Users\\Angel '
    'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\METADATA',
    'DATA'),
-  ('attrs-23.1.0.dist-info\\INSTALLER',
+  ('attrs-23.1.0.dist-info\\RECORD',
    'C:\\Users\\Angel '
-   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\INSTALLER',
+   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\RECORD',
    'DATA')],
  'python311.dll',
  False,

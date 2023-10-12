@@ -21,7 +21,7 @@ color_Embed = {
     "salir_error": (0, 0, 0),  # Negro
     "salir": (102, 0, 204),  # Morado
     "saludar": (255, 128, 0),  # Naranja oscuro
-    "nuevo_color_1": (51, 204, 51),  # Verde claro
+    "comida": (51, 204, 51),  # Verde claro
     "nuevo_color_2": (255, 102, 102),  # Rojo claro
     "nuevo_color_3": (102, 153, 255),  # Azul claro
     "nuevo_color_4": (255, 204, 0),  # Amarillo claro

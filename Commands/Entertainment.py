@@ -6,6 +6,54 @@ import random
 import asyncio
 import openai
 
+# ****************************
+# **    Lista de Comidas    **
+# ****************************
+comida_mexicana = [
+    "Tacos",
+    "Enchiladas",
+    "Guacamole",
+    "Tamales",
+    "Chiles en nogada",
+    "Pozole",
+    "Quesadillas",
+    "Sopes",
+    "Ceviche",
+    "Mole",
+    "Churros",
+    "Flan",
+]
+
+comida_rapida = [
+    "Hamburguesa",
+    "Papas fritas",
+    "Pizza",
+    "Hot dogs",
+    "Pollo frito",
+    "Sándwiches",
+    "Tacos de pescado",
+    "Nuggets de pollo",
+    "Burritos",
+    "Donas",
+    "Nachos",
+    "Milkshake",
+]
+
+comida_japonesa = [
+    "Sushi",
+    "Sashimi",
+    "Ramen",
+    "Tempura",
+    "Teriyaki",
+    "Gyoza",
+    "Okonomiyaki",
+    "Yakitori",
+    "Udon",
+    "Onigiri",
+    "Matcha",
+    "Dorayaki",
+]
+
 # **************************************************
 # **    Comando para Lanzar una Moneda al Azar    **
 # **************************************************
@@ -83,10 +131,69 @@ def Ruleta_Rusa(bot):
         except Exception as e:
             traceback.print_exc()
             await ctx.send(f'Error, se trabó el revólver: {str(e)}')
+
+# ***********************************
+# **    Comando para dar Comida    **
+# ***********************************
+def Elegir_Comida(bot):
+    @bot.command()
+    async def comida(ctx):
+        try:
+            # Mostrar "Escribiendo..."
+            async with ctx.typing():
+                await asyncio.sleep(3) # Esperar 3 segundos simulando "Escribiendo..."
+
+            # Obtener el color correspondiente al comando
+            color_tuple = color_Embed["comida"]
+            color = discord.Colour.from_rgb(*color_tuple)
+
+            # Elegir una categoría de comida al azar
+            categoria = random.choice([comida_mexicana, comida_rapida, comida_japonesa])
+
+            # Elegir una comida al azar de la categoría
+            comida_elegida = random.choice(categoria)
+
+            # Obtener el nombre de la categoría
+            nombre_categoria = ""
+            if categoria == comida_mexicana:
+                nombre_categoria = "Comida Mexicana"
+            elif categoria == comida_rapida:
+                nombre_categoria = "Comida Rápida"
+            elif categoria == comida_japonesa:
+                nombre_categoria = "Comida Japonesa"
+
+            # Crear un Embed con el mensaje de comida y categoría
+            embed = discord.Embed(title="Elección de Comida", color=color)
+            embed.add_field(name=f"Hoy te toca comer algo de {nombre_categoria}:", value=f"**`{comida_elegida}`** para la cena", inline=False)
+
+            # Comprobar si el autor tiene una imagen de perfil
+            if ctx.author.avatar:
+                embed.set_footer(text=f"Solicitado por {ctx.author.display_name}", icon_url=ctx.author.avatar.url)
+            else:
+                embed.set_footer(text=f"Solicitado por {ctx.author.display_name}")
+
+            # Enviar el Embed como mensaje personal al usuario
+            await ctx.author.send(embed=embed)
+
+            # Crear un Embed para el mensaje en el servidor
+            embed_server = discord.Embed(title="Comida Enviada",description="Ya te he enviado tu comida a tu casa, ¡revisa tus mensajes privados {}!".format(ctx.author.mention), color=color)
+            await ctx.send(embed=embed_server)
+
+        except Exception as e:
+            traceback.print_exc()
+            await ctx.send(f'Ocurrió un error al elegir la comida: {str(e)}')
+
+# **********************************************
+# **    Comando para implementar a ChatGPT    **
+# **********************************************
 def GPT(bot):
     @bot.command()
     async def chat(ctx, *, pregunta):
         try:
+            # Mostrar "Escribiendo..."
+            async with ctx.typing():
+                await asyncio.sleep(2) # Esperar 3 segundos simulando "Escribiendo..."
+
             response = openai.Completion.create(
                 engine="text-davinci-002",
                 prompt=pregunta,

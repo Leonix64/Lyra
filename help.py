@@ -9,10 +9,22 @@ commands_list = [
         "category": "/=== Seguridad ===/"
     },
     {
-        "name": "Estadisticas",
-        "description": "Muestra estadísticas del servidor donde se ejecuta el bot.",
-        "usage": "@Lyra estadisticas",
-        "category": "/=== Informacion  ===/"
+        "name": "Generar Contraseña",
+        "description": "Genera una contraseña segura y la envía por mensaje privado.",
+        "usage": "@Lyra password [longitud]",
+        "category": "/=== Seguridad ===/"
+    },
+    {
+        "name": "Manda un Mensaje Anonimo",
+        "description": "Envía un mensaje anónimo a un canal específico.",
+        "usage": "@Lyra mensaje_anonimo <#canal> <contenido>",
+        "category": "/=== Seguridad ===/"
+    },
+    {
+        "name": "Convierte a Clave Morse",
+        "description": "Convierte un mensaje en código Morse.",
+        "usage": "@Lyra morse <mensaje>",
+        "category": "/=== Seguridad ===/"
     },
     {
         "name": "Roles",
@@ -57,34 +69,10 @@ commands_list = [
         "category": "/=== Informacion  ===/"
     },
     {
-        "name": "Laza una Moneda",
-        "description": "Lanza una moneda y muestra el resultado (cara o cruz).",
-        "usage": "@Lyra moneda",
-        "category": "/=== Entretenimiento  ===/"
-    },
-    {
-        "name": "Generar Contraseña",
-        "description": "Genera una contraseña segura y la envía por mensaje privado.",
-        "usage": "@Lyra password [longitud]",
-        "category": "/=== Seguridad ===/"
-    },
-    {
-        "name": "Ruleta Rusa",
-        "description": "Juega a la ruleta rusa y muestra el resultado (bang o click).",
-        "usage": "@Lyra ruleta",
-        "category": "/=== Entretenimiento  ===/"
-    },
-    {
-        "name": "Manda un Mensaje Anonimo",
-        "description": "Envía un mensaje anónimo a un canal específico.",
-        "usage": "@Lyra mensaje_anonimo <#canal> <contenido>",
-        "category": "/=== Seguridad ===/"
-    },
-    {
-        "name": "Convierte a Clave Morse",
-        "description": "Convierte un mensaje en código Morse.",
-        "usage": "@Lyra morse <mensaje>",
-        "category": "/=== Seguridad ===/"
+        "name": "Estadisticas",
+        "description": "Muestra estadísticas del servidor donde se ejecuta el bot.",
+        "usage": "@Lyra estadisticas",
+        "category": "/=== Informacion  ===/"
     },
     {
         "name": "Latencia de Lyra",
@@ -100,26 +88,50 @@ commands_list = [
     },
     {
         "name": "Ayuda con Comandos",
-        "description": "Muestra informacion sobre el comando.",
+        "description": "Muestra información sobre el comando.",
         "usage": "@Lyra ayuda <comando>",
         "category": "/=== Informacion  ===/"
     },
     {
+        "name": "Laza una Moneda",
+        "description": "Lanza una moneda y muestra el resultado (cara o cruz).",
+        "usage": "@Lyra moneda",
+        "category": "/=== Entretenimiento  ===/"
+    },
+    {
+        "name": "Ruleta Rusa",
+        "description": "Juega a la ruleta rusa y muestra el resultado (bang o click).",
+        "usage": "@Lyra ruleta",
+        "category": "/=== Entretenimiento  ===/"
+    },
+    {
+        "name": "Mandar Comida",
+        "description": "Juega a la ruleta rusa pero ahora con comida y ve que te toca.",
+        "usage": "@Lyra comida",
+        "category": "/=== Entretenimiento  ===/"
+    },
+    {
+        "name": "Implementacion de ChatGPT(En Desarrollo)",
+        "description": "La misma funcionalidad de GPT pero ahora en discord",
+        "usage": "@Lyra chat <pregunta>",
+        "category": "/=== Entretenimiento  ===/"
+    },
+    {
+        "name": "Generar un Saludo",
+        "description": "Te da un saludo aleatorio.",
+        "usage": "@Lyra hola",
+        "category": "/=== Saludo  ===/"
+    },
+    {
         "name": "Unir a Lyra a una Llamada",
-        "description": "Se une a un canal de voz",
+        "description": "Se une a un canal de voz.",
         "usage": "@Lyra unirse",
         "category": "/=== Llamada  ===/"
     },
     {
         "name": "Sacar a Lyra de una Llamada",
-        "description": "Se sale a un canal de voz en el que se encuentre",
+        "description": "Se sale a un canal de voz en el que se encuentre.",
         "usage": "@Lyra salir",
         "category": "/=== Llamada  ===/"
-    },
-    {
-        "name": "Generar un Saludo",
-        "description": "Te da un saludo aleatorio",
-        "usage": "@Lyra hola",
-        "category": "/=== Saludo  ===/"
-    },
+    }
 ]

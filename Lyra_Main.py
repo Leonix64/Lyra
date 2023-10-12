@@ -71,6 +71,7 @@ Latencia(bot) #@Lyra ping
 # /=== Entretenimiento  ===/
 Moneda(bot) #@Lyra moneda
 Ruleta_Rusa(bot) #@Lyra ruleta
+Elegir_Comida(bot) #@Lyra comida
 GPT(bot) #@Lyra chat <contenido>
 
 # /=== Llamada  ===/

@@ -53,6 +53,7 @@ def Join_Llamada(bot):
                 color=color
             )
             await ctx.send(embed=embed)
+        print('-------------------------------------------------------')
 
 # ***********************************************
 # **    Comando para Salir del Canal de Voz    **
@@ -98,3 +99,4 @@ def Exit_Call(bot):
                 color=color
             )
             await ctx.send(embed=embed)
+        print('-------------------------------------------------------')
