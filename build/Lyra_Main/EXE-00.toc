@@ -188,33 +188,33 @@
    'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\python3.dll',
    'BINARY'),
   ('base_library.zip', 'C:\\Lyra\\build\\Lyra_Main\\base_library.zip', 'DATA'),
-  ('certifi\\cacert.pem',
-   'C:\\Users\\Angel '
-   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\certifi\\cacert.pem',
-   'DATA'),
   ('certifi\\py.typed',
    'C:\\Users\\Angel '
    'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\certifi\\py.typed',
+   'DATA'),
+  ('certifi\\cacert.pem',
+   'C:\\Users\\Angel '
+   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\certifi\\cacert.pem',
    'DATA'),
   ('nacl\\py.typed',
    'C:\\Users\\Angel '
    'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\nacl\\py.typed',
    'DATA'),
-  ('attrs-23.1.0.dist-info\\RECORD',
-   'C:\\Users\\Angel '
-   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\RECORD',
-   'DATA'),
   ('attrs-23.1.0.dist-info\\METADATA',
    'C:\\Users\\Angel '
    'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\METADATA',
    'DATA'),
-  ('attrs-23.1.0.dist-info\\licenses\\LICENSE',
-   'C:\\Users\\Angel '
-   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\licenses\\LICENSE',
-   'DATA'),
   ('attrs-23.1.0.dist-info\\INSTALLER',
    'C:\\Users\\Angel '
    'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\INSTALLER',
+   'DATA'),
+  ('attrs-23.1.0.dist-info\\RECORD',
+   'C:\\Users\\Angel '
+   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\RECORD',
+   'DATA'),
+  ('attrs-23.1.0.dist-info\\licenses\\LICENSE',
+   'C:\\Users\\Angel '
+   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\licenses\\LICENSE',
    'DATA'),
   ('attrs-23.1.0.dist-info\\WHEEL',
    'C:\\Users\\Angel '
@@ -223,7 +223,7 @@
  [],
  False,
  False,
- 1697149332,
+ 1697150710,
  [('run.exe',
    'C:\\Users\\Angel '
    'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-32bit-intel\\run.exe',
