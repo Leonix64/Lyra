@@ -54,12 +54,10 @@ def Join_Llamada(bot):
             )
             await ctx.send(embed=embed)
 
-        print('-------------------------------------------------------')
-
 # ***********************************************
 # **    Comando para Salir del Canal de Voz    **
 # ***********************************************
-def Exit_Call (bot):
+def Exit_Call(bot):
     @bot.command()
     async def salir(ctx):
         # Verifica si el bot está en un canal de voz
@@ -71,7 +69,7 @@ def Exit_Call (bot):
                 color_tuple = color_Embed["salir"]
                 color = discord.Colour.from_rgb(*color_tuple)
 
-                # Crear un embed con un color RGB personalizado (por ejemplo, RGB 100, 200, 50)
+                # Crear un embed con un color RGB personalizado
                 embed = discord.Embed(
                     title="Bot desconectado del canal de voz",
                     description="Me he desconectado exitosamente del canal de voz.",
@@ -79,7 +77,10 @@ def Exit_Call (bot):
                 )
                 await ctx.send(embed=embed)
             except Exception as e:
-                # Crear un embed con un color RGB personalizado para mostrar el error (por ejemplo, RGB 200, 50, 50)
+                # Crear un embed con un color RGB personalizado para mostrar el error
+                color_tuple = color_Embed["salir_error"]
+                color = discord.Colour.from_rgb(*color_tuple)
+
                 embed = discord.Embed(
                     title="Error al desconectarse del canal de voz",
                     description=f"Ocurrió un error al intentar desconectarse del canal de voz: {e}",
@@ -88,11 +89,12 @@ def Exit_Call (bot):
                 await ctx.send(embed=embed)
         else:
             # Si el bot no está en un canal de voz
+            color_tuple = color_Embed["salir_error"]
+            color = discord.Colour.from_rgb(*color_tuple)
+
             embed = discord.Embed(
                 title="Error al desconectarse del canal de voz",
                 description="El bot no está en un canal de voz.",
                 color=color
             )
             await ctx.send(embed=embed)
-
-        print('-------------------------------------------------------')

@@ -13,7 +13,6 @@ def Lyra_Info(bot):
     @bot.command()
     async def Lyra(ctx):
         try:
-
             # Mostrar "Escribiendo..."
             async with ctx.typing():
                 await asyncio.sleep(3) # Esperar 3 segundos simulando "Escribiendo..."
@@ -31,8 +30,9 @@ def Lyra_Info(bot):
             embed.add_field(name="Mi código fuente", value="[Enlace al código fuente](Proximamente...)", inline=False)
             await ctx.send(embed=embed)
         except Exception as e:
-            traceback.print_exc()
-            await ctx.send(f'Error al obtener la información del bot: {str(e)}')
+            error_embed = discord.Embed(title="Error", color=discord.Color.red())
+            error_embed.add_field(name="Error al obtener la información del bot", value=str(e))
+            await ctx.send(embed=error_embed)
 
 # ***************************************************************
 # **    Comando para Solicitar la Información de un Usuario    **
@@ -41,7 +41,6 @@ def User_Info(bot):
     @bot.command()
     async def userinfo(ctx, member: discord.Member = None):
         try:
-
             # Mostrar "Escribiendo..."
             async with ctx.typing():
                 await asyncio.sleep(3) # Esperar 3 segundos simulando "Escribiendo..."
@@ -54,7 +53,9 @@ def User_Info(bot):
                 member = ctx.author
 
             embed = discord.Embed(title=f"Información de {member.name}", color=color)
-            embed.set_thumbnail(url=member.avatar.url)
+
+            if member is None:
+                embed.set_thumbnail(url=member.avatar.url)
 
             # Información básica
             embed.add_field(name="Nombre de usuario", value=member.name, inline=True)
@@ -63,14 +64,39 @@ def User_Info(bot):
             embed.add_field(name="Cuenta creada el", value=member.created_at.strftime("%d de %B de %Y a las %H:%M:%S"), inline=False)
             embed.add_field(name="Se unió al servidor el", value=member.joined_at.strftime("%d de %B de %Y a las %H:%M:%S"), inline=False)
 
+            # Más información
+            embed.add_field(name="Estado", value=str(member.status).title(), inline=True)
+            embed.add_field(name="Cumpleaños", value=member.created_at.strftime("%d de %B"), inline=True)
+            embed.add_field(name="Móvil", value="Sí" if member is not None and member.is_on_mobile() else "No", inline=True)
+            embed.add_field(name="Es un bot?", value="Sí" if member is not None and member.bot else "No", inline=True)
+            embed.add_field(name="Boost del servidor", value=member.premium_since.strftime("%d de %B de %Y a las %H:%M:%S") if member.premium_since else "N/A", inline=False)
+            embed.add_field(name="Cuenta verificada", value="Sí" if member.public_flags.verified_bot else "No", inline=True)
+
             # Roles del usuario
             roles_str = ", ".join([role.mention for role in member.roles[1:]])
             embed.add_field(name="Roles", value=roles_str if roles_str else "N/A", inline=False)
 
+            # Actividad del usuario
+            if member.activity:
+                if member.activity.type == discord.ActivityType.playing:
+                    activity_type = "Jugando a"
+                elif member.activity.type == discord.ActivityType.streaming:
+                    activity_type = "Transmitiendo"
+                elif member.activity.type == discord.ActivityType.listening:
+                    activity_type = "Escuchando"
+                elif member.activity.type == discord.ActivityType.watching:
+                    activity_type = "Viendo"
+                else:
+                    activity_type = "Otra actividad"
+
+                activity_details = member.activity.name
+                embed.add_field(name="Actividad", value=f"{activity_type} {activity_details}", inline=False)
+
             await ctx.send(embed=embed)
         except Exception as e:
-            traceback.print_exc()
-            await ctx.send(f'Error al obtener la información del usuario: {str(e)}')
+            error_embed = discord.Embed(title="Error", color=discord.Color.red())
+            error_embed.add_field(name="Error al obtener la información del usuario", value=str(e))
+            await ctx.send(embed=error_embed)
 
 # ***********************************************************************
 # **    Comando para Solicitar la Información del Bot de Servidores    **
@@ -79,7 +105,6 @@ def Estadisticas_Bot_Info(bot):
     @bot.command()
     async def stats(ctx):
         try:
-
             # Mostrar "Escribiendo..."
             async with ctx.typing():
                 await asyncio.sleep(3) # Esperar 3 segundos simulando "Escribiendo..."
@@ -97,13 +122,18 @@ def Estadisticas_Bot_Info(bot):
             embed.add_field(name="Usuarios totales", value=total_users)
             embed.add_field(name="Servidores totales", value=total_servers)
             embed.add_field(name="Tiempo en línea", value=str(uptime).split(".")[0])
-            embed.set_footer(text=f"Solicitado por {ctx.author.display_name}", icon_url=ctx.author.avatar.url)
+
+            # Comprobar si el autor tiene una imagen de perfil
+            if ctx.author.avatar:
+                embed.set_footer(text=f"Solicitado por {ctx.author.display_name}", icon_url=ctx.author.avatar.url)
+            else:
+                embed.set_footer(text=f"Solicitado por {ctx.author.display_name}")
 
             await ctx.send(embed=embed)
-
         except Exception as e:
-            traceback.print_exc()
-            await ctx.send(f'Error: {str(e)}')
+            error_embed = discord.Embed(title="Error", color=discord.Color.red())
+            error_embed.add_field(name="Error al obtener las estadísticas", value=str(e))
+            await ctx.send(embed=error_embed)
 
 # **********************************************************
 # **    Comando para Mostrar Estadísticas Del Servidor    **
@@ -112,7 +142,6 @@ def Server_Info(bot):
     @bot.command()
     async def estadisticas(ctx):
         try:
-
             # Mostrar "Escribiendo..."
             async with ctx.typing():
                 await asyncio.sleep(3) # Esperar 3 segundos simulando "Escribiendo..."
@@ -146,10 +175,10 @@ def Server_Info(bot):
             embed.add_field(name="Miembros Desconectados", value=offline_members)
 
             await ctx.send(embed=embed)
-
         except Exception as e:
-            traceback.print_exc()
-            await ctx.send(f'Error al dar las Estadísticas: {str(e)}')
+            error_embed = discord.Embed(title="Error", color=discord.Color.red())
+            error_embed.add_field(name="Error al dar las estadísticas", value=str(e))
+            await ctx.send(embed=error_embed)
 
 # ***************************************************************
 # **    Comando para Solicitar Ayuda con Comandos Generales    **
@@ -158,7 +187,6 @@ def Ayuda(bot):
     @bot.command()
     async def ayuda(ctx, command_name: str = None):
         try:
-
             # Mostrar "Escribiendo..."
             async with ctx.typing():
                 await asyncio.sleep(3) # Esperar 3 segundos simulando "Escribiendo..."
@@ -195,13 +223,13 @@ def Ayuda(bot):
                         embed.add_field(name=f"**{categoria}**", value="\n".join(comandos), inline=False)
                 await ctx.send(embed=embed)
         except Exception as e:
-            traceback.print_exc()
-            await ctx.send(f'Error al obtener la ayuda del comando: {str(e)}')
-
+            error_embed = discord.Embed(title="Error", color=discord.Color.red())
+            error_embed.add_field(name="Error al obtener la ayuda del comando", value=str(e))
+            await ctx.send(embed=error_embed)
 
 # ********************************************************
 # **    Comando para Realizar una Prueba de Latencia    **
-# ********************************************************
+# *********************************************************
 def Latencia(bot):
     @bot.command()
     async def ping(ctx):
@@ -215,10 +243,16 @@ def Latencia(bot):
             # Crear un Embed para mostrar la latencia
             embed = discord.Embed(title="Ping de Lyra", color=color)
             embed.add_field(name="Pong! Latencia", value=f"{latency} ms", inline=False)
-            embed.set_footer(text=f"Solicitado por {ctx.author.display_name}", icon_url=ctx.author.avatar.url)
+
+            # Comprobar si el autor tiene una imagen de perfil
+            if ctx.author.avatar:
+                embed.set_footer(text=f"Solicitado por {ctx.author.display_name}", icon_url=ctx.author.avatar.url)
+            else:
+                embed.set_footer(text=f"Solicitado por {ctx.author.display_name}")
+
 
             await ctx.send(embed=embed)
-
         except Exception as e:
-            traceback.print_exc()
-            await ctx.send(f'Error al establecer la latencia: {str(e)}')
+            error_embed = discord.Embed(title="Error", color=discord.Color.red())
+            error_embed.add_field(name="Error al establecer la latencia", value=str(e))
+            await ctx.send(embed=error_embed)

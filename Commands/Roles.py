@@ -38,7 +38,12 @@ def Mostrar_Roles(bot):
                 color=color
             )
             embed.set_thumbnail(url=server.icon.url)
-            embed.set_footer(text=f"Solicitado por {ctx.author.name}", icon_url=ctx.author.avatar.url)
+
+            # Comprobar si el autor tiene una imagen de perfil
+            if ctx.author.avatar:
+                embed.set_footer(text=f"Solicitado por {ctx.author.name}", icon_url=ctx.author.avatar.url)
+            else:
+                embed.set_footer(text=f"Solicitado por {ctx.author.name}")
 
             # Enviar el Embed en el canal donde se llamó el comando
             await ctx.send(embed=embed)
@@ -103,8 +108,15 @@ def Asignar_Rol(bot):
             embed = discord.Embed(title="Asignación de Rol", color=color)
             embed.add_field(name="Rol asignado", value=rol.mention, inline=False)
             embed.add_field(name="Miembro", value=miembro.mention, inline=False)
-            embed.set_footer(text=f"Asigné el rol por {ctx.author.display_name}", icon_url=ctx.author.avatar.url)
-            embed.set_thumbnail(url=miembro.avatar.url)
+
+            # Comprobar si el autor tiene una imagen de perfil
+            if ctx.author.avatar:
+                embed.set_footer(text=f"Asigné el rol por {ctx.author.display_name}", icon_url=ctx.author.avatar.url)
+            else:
+                embed.set_footer(text=f"Asigné el rol por {ctx.author.display_name}")
+
+            if miembro.avatar:
+                embed.set_thumbnail(url=miembro.avatar.url)
 
             await ctx.send(embed=embed)
 
@@ -136,8 +148,15 @@ def Quitar_Rol(bot):
             embed = discord.Embed(title="Quitar Rol", color=color)
             embed.add_field(name="Rol retirado", value=rol.mention, inline=False)
             embed.add_field(name="Miembro", value=miembro.mention, inline=False)
-            embed.set_footer(text=f"Retiré el rol por {ctx.author.display_name}", icon_url=ctx.author.avatar.url)
-            embed.set_thumbnail(url=miembro.avatar.url)
+
+            # Comprobar si el autor tiene una imagen de perfil
+            if ctx.author.avatar:
+                embed.set_footer(text=f"Retiré el rol por {ctx.author.display_name}", icon_url=ctx.author.avatar.url)
+            else:
+                embed.set_footer(text=f"Retiré el rol por {ctx.author.display_name}")
+
+            if miembro.avatar:
+                embed.set_thumbnail(url=miembro.avatar.url)
 
             await ctx.send(embed=embed)
 

@@ -1,5 +1,10 @@
-TOKEN = '###'
+import openai
+
+TOKEN = '###'# Token de Discord
 COMMAND_PREFIX = "!"
+
+# API de OpenAI
+openai.api_key = "###" # TU_API_KEY_AQUÍ
 
 #Permisos (se pone como custom link en el bot OAuth2)
 #https://discord.com/developers/applications

@@ -18,6 +18,7 @@ color_Embed = {
     "ayuda": (0, 255, 128),  # Verde lima
     "unirse": (50, 50, 200),  # Azul profundo
     "unirse_error": (0, 0, 0),  # Negro
+    "salir_error": (0, 0, 0),  # Negro
     "salir": (102, 0, 204),  # Morado
     "saludar": (255, 128, 0),  # Naranja oscuro
     "nuevo_color_1": (51, 204, 51),  # Verde claro

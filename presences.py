@@ -2,6 +2,7 @@ import discord
 import random
 import asyncio
 import time
+import aiohttp
 
 # *********************************************
 # **    Lista de Actividades Predefinidas    **
@@ -80,7 +81,6 @@ actividades = [
 # **    Lista de Mensajes Aleatorios    **
 # ****************************************
 mensajes_aleatorios = [
-
     # Egolatras?
     '(Conectando...) \n¡Bienvenidos al espectáculo de Lyra, donde la grandeza nunca termina! 💥✨',
     '(Conectando...) \n¿Saben por qué el sol brilla tan brillante? Porque está tratando de competir con mi esplendor. ☀️💫',
@@ -126,6 +126,26 @@ mensajes_aleatorios = [
     '(Conectando...) \nLa simplicidad a menudo conduce a la eficiencia. ¿En qué puedo simplificar su día hoy? 🤝🤖',
 ]
 
+# ***************************************
+# **    Lista de Imagenes de Perfil    **
+# ***************************************
+imagenes_perfil = [
+    'https://i.pinimg.com/originals/9c/1f/e2/9c1fe280b0d5d51f5da0641880f896ec.jpg',
+    'https://i.pinimg.com/originals/bb/32/2b/bb322b6e7e0aa1ca9f0c9cfff8340b88.jpg',
+    'https://i.pinimg.com/originals/db/70/02/db70020359c0ed8ebfe3c1fd7ce11963.jpg',
+    'https://i.pinimg.com/originals/15/a2/2d/15a22d25a4b9fda6d43861524fa270f7.jpg',
+    'https://i.pinimg.com/originals/87/8a/53/878a5339c57139d63393596d059daf7b.jpg',
+    'https://i.pinimg.com/originals/98/9f/cb/989fcb8577f66377cc941295ca34852d.jpg',
+    'https://i.pinimg.com/originals/23/b8/65/23b865c8ccb9f975b8e90018ff68e7d6.jpg',
+    'https://i.pinimg.com/originals/6c/6b/ac/6c6bac157dbe68658cd1b7e1ace0e8c5.jpg',
+    'https://i.pinimg.com/originals/84/8e/f2/848ef25eee49ba05394eb2ff37e4543c.jpg',
+    'https://i.pinimg.com/originals/9a/61/f8/9a61f80f136428046716bada1d9c30c5.jpg',
+    'https://i.pinimg.com/originals/0e/6b/2e/0e6b2ef354224f1e3ec2aea07051f8fc.jpg',
+    'https://i.pinimg.com/originals/98/df/89/98df89a0bd48beacbb85ec798c590554.jpg',
+    #'https://media.tenor.com/Kll7tS2Dv2kAAAAC/doki-doki-literature-club-dancing.gif',
+
+]
+
 # ********************************************************
 # **    Función para Configurar la Presencia del Bot    **
 # ********************************************************
@@ -148,11 +168,30 @@ async def set_bot_presence(bot):
         # Esperar un tiempo para cambiar de estado nuevamente (segundos)
         await asyncio.sleep(1800)
 
-# ********************************************************
-# **    Función para Configurar la Presencia del Bot    **
-# ********************************************************
+# **********************************************
+# **    Función para Saludar al Conectarse    **
+# **********************************************
 async def saludo_principal(bot):
     general_channel = bot.get_channel(1159313019910770791)
     if general_channel:
         mensaje_aleatorio = random.choice(mensajes_aleatorios)
         await general_channel.send(mensaje_aleatorio)
+
+# *****************************************************
+# **    Función para Cambiar la Imagen del Perfil    **
+# *****************************************************
+# Función para cambiar la imagen del perfil de manera aleatoria
+async def cambiar_imagen_perfil(bot):
+    while True:
+        # Elegir una imagen al azar de la lista
+        imagen_url = random.choice(imagenes_perfil)
+        
+        # Descargar la imagen y establecerla como el nuevo avatar
+        async with aiohttp.ClientSession() as session:
+            async with session.get(imagen_url) as resp:
+                if resp.status == 200:
+                    avatar_bytes = await resp.read()
+                    await bot.user.edit(avatar=avatar_bytes)
+        
+        # Esperar un tiempo para cambiar la imagen nuevamente (segundos)
+        await asyncio.sleep(172800) # Cada 2 dias

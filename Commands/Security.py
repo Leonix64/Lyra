@@ -24,7 +24,7 @@ def Code_QR(bot):
 
             # Mostrar "Escribiendo..."
             async with ctx.typing():
-                await asyncio.sleep(3) # Esperar 3 segundos simulando "Escribiendo..."
+                await asyncio.sleep(1) # Esperar 3 segundos simulando "Escribiendo..."
 
             # Obtener el color correspondiente al comando
             color_tuple = color_Embed["QR"]
@@ -50,7 +50,13 @@ def Code_QR(bot):
             embed = discord.Embed(title="Código QR generado", color=color)
             mensaje_lyra = "He generado un Código QR para ti."
             embed.description = mensaje_lyra
-            embed.set_author(name=f"Solicitado por: {autor.display_name}", icon_url=autor.avatar.url)
+
+            # Comprobar si el autor tiene una imagen de perfil
+            if ctx.author.avatar:
+                embed.set_author(name=f"Solicitado por: {autor.display_name}", icon_url=autor.avatar.url)
+            else:
+                embed.set_author(name=f"Solicitado por: {autor.display_name}")
+
             embed.set_image(url="attachment://codigo_qr.png")
 
             # Enviar el Embed con la imagen del código QR en el canal donde se llamó el comando
@@ -72,7 +78,7 @@ def Password(bot):
 
             # Mostrar "Escribiendo..."
             async with ctx.typing():
-                await asyncio.sleep(3) # Esperar 3 segundos simulando "Escribiendo..."
+                await asyncio.sleep(0) # Esperar 3 segundos simulando "Escribiendo..."
 
             # Obtener el color correspondiente al comando
             color_tuple = color_Embed["password"]
@@ -85,7 +91,12 @@ def Password(bot):
             embed = discord.Embed(title="Generador de Contraseña Segura", color=color)
             embed.add_field(name="Contraseña generada", value=f'||`{contrasena}`||', inline=False)
             #print(f"Contraseña generada: {contrasena} por: {ctx.author.display_name}")
-            embed.set_footer(text=f'Generada por {ctx.author.display_name}', icon_url=ctx.author.avatar.url)
+
+            # Comprobar si el autor tiene una imagen de perfil
+            if ctx.author.avatar:
+                embed.set_footer(text=f'Generada por {ctx.author.display_name}', icon_url=ctx.author.avatar.url)
+            else:
+                embed.set_footer(text=f'Generada por {ctx.author.display_name}')
 
             # Enviar el Embed en un mensaje privado al usuario
             await ctx.author.send(embed=embed)
@@ -158,7 +169,12 @@ def Code_Morse(bot):
             embed = discord.Embed(title="Mensaje en Código Morse", color=color)
             embed.add_field(name="Mensaje original", value=" ".join(mensaje), inline=False)
             embed.add_field(name="Mensaje en Morse", value=mensaje_morse, inline=False)
-            embed.set_footer(text=f"Convertido por {ctx.author.display_name}", icon_url=ctx.author.avatar.url)
+
+            # Comprobar si el autor tiene una imagen de perfil
+            if ctx.author.avatar:
+                embed.set_footer(text=f"Convertido por {ctx.author.display_name}", icon_url=ctx.author.avatar.url)
+            else:
+                embed.set_footer(text=f"Convertido por {ctx.author.display_name}")
 
             await ctx.send(embed=embed)
 

@@ -1,10 +1,10 @@
 import discord
 from discord.ext import commands
-import youtube_dl
 import traceback
 from embed import color_Embed
 import random
 import asyncio
+import openai
 
 # **************************************************
 # **    Comando para Lanzar una Moneda al Azar    **
@@ -13,7 +13,6 @@ def Moneda(bot):
     @bot.command()
     async def moneda(ctx):
         try:
-
             # Mostrar "Escribiendo..."
             async with ctx.typing():
                 await asyncio.sleep(3) # Esperar 3 segundos simulando "Escribiendo..."
@@ -27,7 +26,12 @@ def Moneda(bot):
             # Crear un Embed para el resultado de la moneda
             embed = discord.Embed(title="Lanzamiento de Moneda", color=color)
             embed.add_field(name="Resultado", value=resultado, inline=False)
-            embed.set_footer(text=f"Lanzado por {ctx.author.display_name}", icon_url=ctx.author.avatar.url)
+
+            # Comprobar si el autor tiene una imagen de perfil
+            if ctx.author.avatar:
+                embed.set_footer(text=f"Lanzado por {ctx.author.display_name}", icon_url=ctx.author.avatar.url)
+            else:
+                embed.set_footer(text=f"Lanzado por {ctx.author.display_name}")
 
             # Agregar una imagen de una moneda (cara o cruz) al Embed
             if resultado == "cara":
@@ -62,7 +66,12 @@ def Ruleta_Rusa(bot):
 
             # Crear un Embed para el juego de la ruleta
             embed = discord.Embed(title="Ruleta Rusa", color=color)
-            embed.set_footer(text=f"Jugado por {ctx.author.display_name}", icon_url=ctx.author.avatar.url)
+
+            # Comprobar si el autor tiene una imagen de perfil
+            if ctx.author.avatar:
+                embed.set_footer(text=f"Jugado por {ctx.author.display_name}", icon_url=ctx.author.avatar.url)
+            else:
+                embed.set_footer(text=f"Jugado por {ctx.author.display_name}")
 
             if chamber == trigger:
                 embed.add_field(name="¡BANG!", value="Parece que no sobreviviste. 😵💥", inline=False)
@@ -74,4 +83,22 @@ def Ruleta_Rusa(bot):
         except Exception as e:
             traceback.print_exc()
             await ctx.send(f'Error, se trabó el revólver: {str(e)}')
+def GPT(bot):
+    @bot.command()
+    async def chat(ctx, *, pregunta):
+        try:
+            response = openai.Completion.create(
+                engine="text-davinci-002",
+                prompt=pregunta,
+                max_tokens=150
+            )
+            respuesta = response.choices[0].text
 
+            # Comprobar si el autor tiene una imagen de perfil
+            if ctx.author.avatar:
+                await ctx.send(respuesta, content=f"Respuesta para {ctx.author.mention}:", embed=discord.Embed().set_thumbnail(url=ctx.author.avatar.url))
+            else:
+                await ctx.send(respuesta)
+
+        except Exception as e:
+            await ctx.send(f"Ocurrió un error: {e}")
