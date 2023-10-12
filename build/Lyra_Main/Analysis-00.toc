@@ -637,6 +637,10 @@
    'C:\\Users\\Angel '
    'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\_threading_local.py',
    'PYMODULE'),
+  ('_py_abc',
+   'C:\\Users\\Angel '
+   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\_py_abc.py',
+   'PYMODULE'),
   ('tracemalloc',
    'C:\\Users\\Angel '
    'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\tracemalloc.py',
@@ -644,10 +648,6 @@
   ('stringprep',
    'C:\\Users\\Angel '
    'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\stringprep.py',
-   'PYMODULE'),
-  ('_py_abc',
-   'C:\\Users\\Angel '
-   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\_py_abc.py',
    'PYMODULE'),
   ('Commands.Greetings', 'C:\\Lyra\\Commands\\Greetings.py', 'PYMODULE'),
   ('Commands', '-', 'PYMODULE'),
@@ -2358,23 +2358,23 @@
    'C:\\Users\\Angel '
    'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\nacl\\py.typed',
    'DATA'),
-  ('attrs-23.1.0.dist-info\\INSTALLER',
+  ('attrs-23.1.0.dist-info\\RECORD',
    'C:\\Users\\Angel '
-   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\INSTALLER',
-   'DATA'),
-  ('attrs-23.1.0.dist-info\\licenses\\LICENSE',
-   'C:\\Users\\Angel '
-   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\licenses\\LICENSE',
-   'DATA'),
-  ('attrs-23.1.0.dist-info\\WHEEL',
-   'C:\\Users\\Angel '
-   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\WHEEL',
+   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\RECORD',
    'DATA'),
   ('attrs-23.1.0.dist-info\\METADATA',
    'C:\\Users\\Angel '
    'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\METADATA',
    'DATA'),
-  ('attrs-23.1.0.dist-info\\RECORD',
+  ('attrs-23.1.0.dist-info\\licenses\\LICENSE',
    'C:\\Users\\Angel '
-   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\RECORD',
+   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\licenses\\LICENSE',
+   'DATA'),
+  ('attrs-23.1.0.dist-info\\INSTALLER',
+   'C:\\Users\\Angel '
+   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\INSTALLER',
+   'DATA'),
+  ('attrs-23.1.0.dist-info\\WHEEL',
+   'C:\\Users\\Angel '
+   'HP\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\site-packages\\attrs-23.1.0.dist-info\\WHEEL',
    'DATA')])
