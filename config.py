@@ -4,7 +4,7 @@ TOKEN = 'MTA5ODM3MTAyNjUxNTE0NDg0NQ.GiowaA.IU0T2Y_nvEZZUn0DPWZoaxqyK8-_N3quPzzeg
 COMMAND_PREFIX = "!"
 
 # API de OpenAI
-openai.api_key = "###" # TU_API_KEY_AQUÍ
+openai.api_key = "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" # TU_API_KEY_AQUÍ
 
 #Permisos (se pone como custom link en el bot OAuth2)
 #https://discord.com/developers/applications
