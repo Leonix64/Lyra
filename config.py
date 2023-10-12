@@ -1,10 +1,10 @@
 import openai
 
-TOKEN = 'MTA5ODM3MTAyNjUxNTE0NDg0NQ.GiowaA.IU0T2Y_nvEZZUn0DPWZoaxqyK8-_N3quPzzeg8'# Token de Discord
+TOKEN = 'MTA5ODM3MTAyNjUxNTE0NDg0NQ.GEpvGG.FMi1MrFZknY-c3esM3rO5I6n5JclK5hSluCylk'# Token de Discord
 COMMAND_PREFIX = "!"
 
 # API de OpenAI
-openai.api_key = "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" # TU_API_KEY_AQUÍ
+openai.api_key = "" # TU_API_KEY_AQUÍ
 
 #Permisos (se pone como custom link en el bot OAuth2)
 #https://discord.com/developers/applications
