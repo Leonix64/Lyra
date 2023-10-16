@@ -1,3 +1,5 @@
+- Version 1.0
+
 # Generador de Códigos QR con Bot de Discord
 
 Este es un bot de Discord que permite generar códigos QR a partir de texto proporcionado por los usuarios en un servidor de Discord. Los códigos QR generados se pueden utilizar para almacenar información y enlaces.

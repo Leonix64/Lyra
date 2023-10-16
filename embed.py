@@ -1,6 +1,4 @@
 color_Embed = {
-    "QR": (255, 0, 0),  # Rojo
-    "estadisticas": (0, 255, 0),  # Verde
     "roles": (0, 0, 255),  # Azul
     "crear_rol": (192, 192, 192),  # Plata
     "eliminar_rol": (255, 255, 255),  # Blanco
@@ -22,7 +20,7 @@ color_Embed = {
     "salir": (102, 0, 204),  # Morado
     "saludar": (255, 128, 0),  # Naranja oscuro
     "comida": (51, 204, 51),  # Verde claro
-    "nuevo_color_2": (255, 102, 102),  # Rojo claro
+    "clear": (255, 102, 102),  # Rojo claro
     "nuevo_color_3": (102, 153, 255),  # Azul claro
     "nuevo_color_4": (255, 204, 0),  # Amarillo claro
     "nuevo_color_5": (204, 0, 204),  # Rosa oscuro
@@ -32,4 +30,3 @@ color_Embed = {
     "nuevo_color_9": (102, 255, 102),  # Verde pastel
     "nuevo_color_10": (204, 153, 255),  # Lila
 }
-

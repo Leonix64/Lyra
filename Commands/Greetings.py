@@ -30,6 +30,9 @@ saludos = [
     "¡Buenos días, {}! Comencemos el día con entusiasmo. 🌄",
     "¡Hola, {}! ¿Qué objetivos te propones alcanzar hoy? 🎯",
     "¡Hola, {}! ¿Listo para escribir una nueva página en tu historia? 📖",
+    "¡Hola, {}! ¿Qué te trae por aquí hoy? 🌼",
+    "¡Hola, {}! La alegría de verte es indescriptible. 😄",
+    "¡Buenas, {}! ¿En qué puedo asistirte en este momento? 🌟"
 ]
 
 # ****************************************************
@@ -39,23 +42,25 @@ def Saludar(bot):
     @bot.command()
     async def hola(ctx):
         try:
-
             # Obtener el color correspondiente al comando
             color_tuple = color_Embed["saludar"]
             color = discord.Colour.from_rgb(*color_tuple)
 
-            # Selecciona un saludo aleatorio de la lista y menciona al autor
+            # Seleccionar un saludo aleatorio de la lista y mencionar al autor
             saludo_aleatorio = random.choice(saludos).format(ctx.author.mention)
 
             # Crear un objeto Embed para la respuesta
             embed = discord.Embed(
                 title="Saludo Aleatorio",
-                description=f'{saludo_aleatorio}',
+                description=saludo_aleatorio,
                 color=color
             )
 
-            # Responde al mensaje con el saludo mencionando al usuario
+            # Responder al mensaje con el saludo mencionando al usuario
             await ctx.send(embed=embed)
         except Exception as e:
-            traceback.print_exc()
-            await ctx.send(f'Ocurrio un error: {str(e)}')
+            # Mostrando un error en rojo
+            color_error = discord.Colour.from_rgb(255, 0, 0)
+            embed_error = discord.Embed(title="Error", color=color_error)
+            embed_error.add_field(name="Ocurrió un error", value=str(e), inline=False)
+            await ctx.send(embed=embed_error)

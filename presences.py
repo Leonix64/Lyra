@@ -173,6 +173,7 @@ async def set_bot_presence(bot):
 # **********************************************
 async def saludo_principal(bot):
     general_channel = bot.get_channel(1159313019910770791)
+
     if general_channel:
         mensaje_aleatorio = random.choice(mensajes_aleatorios)
         await general_channel.send(mensaje_aleatorio)
@@ -180,18 +181,22 @@ async def saludo_principal(bot):
 # *****************************************************
 # **    Función para Cambiar la Imagen del Perfil    **
 # *****************************************************
-# Función para cambiar la imagen del perfil de manera aleatoria
 async def cambiar_imagen_perfil(bot):
     while True:
-        # Elegir una imagen al azar de la lista
-        imagen_url = random.choice(imagenes_perfil)
-        
-        # Descargar la imagen y establecerla como el nuevo avatar
-        async with aiohttp.ClientSession() as session:
-            async with session.get(imagen_url) as resp:
-                if resp.status == 200:
-                    avatar_bytes = await resp.read()
-                    await bot.user.edit(avatar=avatar_bytes)
-        
-        # Esperar un tiempo para cambiar la imagen nuevamente (segundos)
-        await asyncio.sleep(172800) # Cada 2 dias
+        try:
+            # Elegir una imagen al azar de la lista
+            imagen_url = random.choice(imagenes_perfil)
+
+            # Descargar la imagen
+            async with aiohttp.ClientSession() as session:
+                async with session.get(imagen_url) as resp:
+                    if resp.status == 200:
+                        avatar_bytes = await resp.read()
+
+                        # Establecer la imagen como el nuevo avatar
+                        await bot.user.edit(avatar=avatar_bytes)
+        except Exception as e:
+            print(f"Error al cambiar la imagen de perfil: {str(e)}")
+
+        # Esperar un tiempo para cambiar la imagen nuevamente (ajusta el tiempo según tus preferencias)
+        await asyncio.sleep(172800)  # Cambia la imagen cada 2 días (en segundos)
