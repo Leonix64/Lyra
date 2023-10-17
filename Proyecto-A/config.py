@@ -1,6 +1,6 @@
 import openai
 
-TOKEN = 'MTA5ODM3MTAyNjUxNTE0NDg0NQ.GU-mNx.P0BypVUsuVDzDKajaRS5dCt7EpI6Wf0nCGEHqk'# Token de Discord
+TOKEN = 'MTA5ODM3MTAyNjUxNTE0NDg0NQ.GRxFsa.OEStCRmYcr-37pdWs7csqbNDGHFuLAtBF9MWYA'# Token de Discord
 COMMAND_PREFIX = "!"
 
 # API de OpenAI
