@@ -1,4 +1,5 @@
 color_Embed = {
+    "QR": (102, 153, 255),  # Azul claro
     "roles": (0, 0, 255),  # Azul
     "crear_rol": (192, 192, 192),  # Plata
     "eliminar_rol": (255, 255, 255),  # Blanco
@@ -21,7 +22,6 @@ color_Embed = {
     "saludar": (255, 128, 0),  # Naranja oscuro
     "comida": (51, 204, 51),  # Verde claro
     "clear": (255, 102, 102),  # Rojo claro
-    "nuevo_color_3": (102, 153, 255),  # Azul claro
     "nuevo_color_4": (255, 204, 0),  # Amarillo claro
     "nuevo_color_5": (204, 0, 204),  # Rosa oscuro
     "nuevo_color_6": (0, 204, 204),  # Cian claro
