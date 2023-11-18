@@ -166,7 +166,7 @@ async def set_bot_presence(bot):
         )
         
         # Esperar un tiempo para cambiar de estado nuevamente (segundos)
-        await asyncio.sleep(1800)
+        await asyncio.sleep(3600)
 
 # **********************************************
 # **    Función para Saludar al Conectarse    **

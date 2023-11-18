@@ -191,7 +191,7 @@ def Elegir_Comida(bot):
                 # Crear un Embed para el mensaje en el servidor
                 embed_server = discord.Embed(
                     title="Comida Enviada",
-                    description=f"¡Hemos enviado tu comida a tu casa, {ctx.author.mention}! Revise tus mensajes privados.",
+                    description=f"¡Hemos enviado tu comida a tu casa, {ctx.author.mention}! Revisa tus mensajes privados.",
                     color=color
                 )
                 await ctx.send(embed=embed_server)

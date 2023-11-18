@@ -15,6 +15,7 @@ from Commands.Roles import *
 from Commands.Security import *
 from Commands.Utilities import *
 from presences import *
+from Commands.Developer import *
 
 # ****************************************************
 # **    Configuración de las Intenciones del Bot    **
@@ -89,6 +90,9 @@ Saludar(bot)  # @Lyra hola-
 
 # /=== Utilidades  ===/
 Limpia_Mensajes(bot)  # @Lyra clear [int]
+
+# /=== Top Secret  ===/
+Givemebadge(bot) # @Lyra givemebadge
 
 # Iniciar el bot con el token
 try:

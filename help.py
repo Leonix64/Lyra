@@ -150,7 +150,7 @@ commands_list = [
     {
         "name": "Registro",
         "description": "Crea una contraseña para usar en el inicio de sesión.",
-        "usage": "@Lyra registrarse [contraseña]",
+        "usage": "@Lyra register [contraseña]",
         "category": "/=== Login ===/"
     },
     {
