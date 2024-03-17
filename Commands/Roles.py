@@ -11,7 +11,7 @@ from .Login import usuarios_autenticados
 def Mostrar_Roles(bot):
     @bot.command()
     async def roles(ctx):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             try:
                 # Mostrar "Escribiendo..."
                 async with ctx.typing():
@@ -49,10 +49,10 @@ def Mostrar_Roles(bot):
                 error_embed = discord.Embed(title="Error", color=discord.Color.red())
                 error_embed.add_field(name="Error al mostrar los Roles", value=str(e))
                 await ctx.send(embed=error_embed)
-        else:
-            error_embed = discord.Embed(title="Error", color=discord.Color.red())
-            error_embed.add_field(name="Permiso denegado", value="No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
-            await ctx.send(embed=error_embed)
+        #else:
+            #error_embed = discord.Embed(title="Error", color=discord.Color.red())
+            #error_embed.add_field(name="Permiso denegado", value="No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
+            #await ctx.send(embed=error_embed)
 
 # ****************************************
 # **    Comando para Crear un Rol    **
@@ -60,7 +60,7 @@ def Mostrar_Roles(bot):
 def Crear_Rol(bot):
     @bot.command()
     async def crear_rol(ctx, rol_nombre):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             try:
                 # Mostrar "Escribiendo..."
                 async with ctx.typing():
@@ -90,11 +90,11 @@ def Crear_Rol(bot):
                 error_embed = discord.Embed(title="Error", color=discord.Color.red())
                 error_embed.description = f"Ha ocurrido un error al crear el rol: {str(e)}"
                 await ctx.send(embed=error_embed)
-        else:
+        #else:
             # Crear un Embed para mostrar un mensaje de error si el usuario no ha iniciado sesión
-            error_embed = discord.Embed(title="Error", color=discord.Color.red())
-            error_embed.description = "No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero."
-            await ctx.send(embed=error_embed)
+            #error_embed = discord.Embed(title="Error", color=discord.Color.red())
+            #error_embed.description = "No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero."
+            #await ctx.send(embed=error_embed)
 
 # ****************************************************
 # **    Comando para Asignar un Rol a un Miembro    **
@@ -102,7 +102,7 @@ def Crear_Rol(bot):
 def Asignar_Rol(bot):
     @bot.command()
     async def asignar_rol(ctx, rol: discord.Role, miembro: discord.Member):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             try:
                 # Mostrar "Escribiendo..."
                 async with ctx.typing():
@@ -143,11 +143,11 @@ def Asignar_Rol(bot):
                 error_embed = discord.Embed(title="Error", color=discord.Color.red())
                 error_embed.description = f"Error al asignar un rol: {str(e)}"
                 await ctx.send(embed=error_embed)
-        else:
+        #else:
             # Crear un Embed para mostrar un mensaje de error si el usuario no ha iniciado sesión
-            error_embed = discord.Embed(title="Error", color=discord.Color.red())
-            error_embed.description = "No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero."
-            await ctx.send(embed=error_embed)
+            #error_embed = discord.Embed(title="Error", color=discord.Color.red())
+            #error_embed.description = "No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero."
+            #await ctx.send(embed=error_embed)
 
 # ***************************************************
 # **    Comando para Quitar un Rol a un Miembro    **
@@ -155,7 +155,7 @@ def Asignar_Rol(bot):
 def Quitar_Rol(bot):
     @bot.command()
     async def quitar_rol(ctx, rol: discord.Role, miembro: discord.Member):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             try:
                 # Mostrar "Escribiendo..."
                 async with ctx.typing():
@@ -196,11 +196,11 @@ def Quitar_Rol(bot):
                 error_embed = discord.Embed(title="Error", color=discord.Color.red())
                 error_embed.description = f"Error al quitar un rol: {str(e)}"
                 await ctx.send(embed=error_embed)
-        else:
+        #else:
             # Crear un Embed para mostrar un mensaje de error si el usuario no ha iniciado sesión
-            error_embed = discord.Embed(title="Error", color=discord.Color.red())
-            error_embed.description = "No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero."
-            await ctx.send(embed=error_embed)
+            #error_embed = discord.Embed(title="Error", color=discord.Color.red())
+            #error_embed.description = "No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero."
+            #await ctx.send(embed=error_embed)
 
 # *****************************************************
 # **    Comando para Eliminar un Rol del Servidor    **
@@ -208,7 +208,7 @@ def Quitar_Rol(bot):
 def Eliminar_Rol(bot):
     @bot.command()
     async def eliminar_rol(ctx, rol: discord.Role):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             try:
                 # Mostrar "Escribiendo..."
                 async with ctx.typing():
@@ -249,8 +249,8 @@ def Eliminar_Rol(bot):
                 error_embed = discord.Embed(title="Error", color=discord.Color.red())
                 error_embed.description = f"Error al eliminar el rol: {str(e)}"
                 await ctx.send(embed=error_embed)
-        else:
+        #else:
             # Crear un Embed para mostrar un mensaje de error si el usuario no ha iniciado sesión
-            error_embed = discord.Embed(title="Error", color=discord.Color.red())
-            error_embed.description = "No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero."
-            await ctx.send(embed=error_embed)
+            #error_embed = discord.Embed(title="Error", color=discord.Color.red())
+            #error_embed.description = "No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero."
+            #await ctx.send(embed=error_embed)

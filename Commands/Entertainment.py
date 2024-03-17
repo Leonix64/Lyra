@@ -61,7 +61,7 @@ comida_japonesa = [
 def Moneda(bot):
     @bot.command()
     async def moneda(ctx):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             try:
                 # Mostrando "Escribiendo..."
                 async with ctx.typing():
@@ -97,8 +97,8 @@ def Moneda(bot):
                 embed_error = discord.Embed(title="Error", color=color_error)
                 embed_error.add_field(name="Error al tirar la moneda", value=str(e), inline=False)
                 await ctx.send(embed=embed_error)
-        else:
-            await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
+        #else:
+            #await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
 
 # ***********************************************
 # **    Comando para Jugar a la Ruleta Rusa    **
@@ -106,7 +106,7 @@ def Moneda(bot):
 def Ruleta_Rusa(bot):
     @bot.command()
     async def ruleta(ctx):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             try:
                 # Mostrando "Escribiendo..."
                 async with ctx.typing():
@@ -141,8 +141,8 @@ def Ruleta_Rusa(bot):
                 embed_error = discord.Embed(title="Error", color=color_error)
                 embed_error.add_field(name="Error, se trabó el revólver", value=str(e), inline=False)
                 await ctx.send(embed=embed_error)
-        else:
-            await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
+        #else:
+            #await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
 
 # ***********************************
 # **    Comando para dar Comida    **
@@ -150,7 +150,7 @@ def Ruleta_Rusa(bot):
 def Elegir_Comida(bot):
     @bot.command()
     async def comida(ctx):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             try:
                 # Mostrando "Escribiendo..."
                 async with ctx.typing():
@@ -202,8 +202,8 @@ def Elegir_Comida(bot):
                 embed_error = discord.Embed(title="Error", color=color_error)
                 embed_error.add_field(name="Ocurrió un error al elegir la comida", value=str(e), inline=False)
                 await ctx.send(embed=embed_error)
-        else:
-            await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
+        #else:
+            #await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
 
 # **********************************************
 # **    Comando para Implementar a ChatGPT    **
@@ -211,7 +211,7 @@ def Elegir_Comida(bot):
 def GPT(bot):
     @bot.command()
     async def chat(ctx, *, pregunta):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             try:
                 # Mostrando "Escribiendo..."
                 async with ctx.typing():
@@ -236,5 +236,5 @@ def GPT(bot):
                 embed_error = discord.Embed(title="Error", color=color_error)
                 embed_error.add_field(name="Ocurrió un error", value=str(e), inline=False)
                 await ctx.send(embed=embed_error)
-        else:
-            await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
+        #else:
+            #await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")

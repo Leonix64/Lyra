@@ -15,7 +15,7 @@ from .Login import usuarios_autenticados
 def Code_QR(bot):
     @bot.command()
     async def QR(ctx, *, contenido):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             try:
                 # Verificar que el contenido tenga menos de 500 caracteres
                 if len(contenido) > 500:
@@ -74,11 +74,11 @@ def Code_QR(bot):
                 error_embed = discord.Embed(title="Error", color=discord.Color.red())
                 error_embed.description = f"He encontrado un error al generar el código QR: {str(e)}"
                 await ctx.send(embed=error_embed)
-        else:
+        #else:
             # Crear un Embed para mostrar un mensaje de error si el usuario no ha iniciado sesión
-            error_embed = discord.Embed(title="Error", color=discord.Color.red())
-            error_embed.description = "No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero."
-            await ctx.send(embed=error_embed)
+            #error_embed = discord.Embed(title="Error", color=discord.Color.red())
+            #error_embed.description = "No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero."
+            #await ctx.send(embed=error_embed)
 
 # ******************************************************
 # **    Comando para Generar una Contraseña Segura    **
@@ -86,7 +86,7 @@ def Code_QR(bot):
 def Password(bot):
     @bot.command()
     async def password(ctx, longitud: int = 20):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             try:
 
                 # Mostrar "Escribiendo..."
@@ -121,11 +121,11 @@ def Password(bot):
                 error_embed.description = f"Error al generar la contraseña: {str(e)}"
                 await ctx.send(embed=error_embed)
 
-        else:
+        #else:
             # Crear un Embed para mostrar un mensaje de error si el usuario no ha iniciado sesión
-            error_embed = discord.Embed(title="Error", color=discord.Color.red())
-            error_embed.description = "No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero."
-            await ctx.send(embed=error_embed)
+            #error_embed = discord.Embed(title="Error", color=discord.Color.red())
+            #error_embed.description = "No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero."
+            #await ctx.send(embed=error_embed)
 
 
 # **************************************************
@@ -134,7 +134,7 @@ def Password(bot):
 def Anonimo(bot):
     @bot.command()
     async def mensaje_anonimo(ctx, canal: discord.TextChannel, *, contenido):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             try:
 
                 # Mostrar "Escribiendo..."
@@ -162,11 +162,11 @@ def Anonimo(bot):
                 error_embed = discord.Embed(title="Error", color=discord.Color.red())
                 error_embed.description = f"Error al enviar el mensaje anónimo: {str(e)}"
                 await ctx.send(embed=error_embed)
-        else:
+        #else:
             # Crear un Embed para mostrar un mensaje de error si el usuario no ha iniciado sesión
-            error_embed = discord.Embed(title="Error", color=discord.Color.red())
-            error_embed.description = "No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero."
-            await ctx.send(embed=error_embed)
+            #error_embed = discord.Embed(title="Error", color=discord.Color.red())
+            #error_embed.description = "No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero."
+            #await ctx.send(embed=error_embed)
 
 # **********************************************************
 # **    Comando para Enviar un Mensaje en Código Morse    **
@@ -174,7 +174,7 @@ def Anonimo(bot):
 def Code_Morse(bot):
     @bot.command()
     async def morse(ctx, *mensaje):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             try:
                 # Mostrar "Escribiendo..."
                 async with ctx.typing():
@@ -216,8 +216,8 @@ def Code_Morse(bot):
                 error_embed = discord.Embed(title="Error", color=discord.Color.red())
                 error_embed.description = f"Error al traducir: {str(e)}"
                 await ctx.send(embed=error_embed)
-        else:
+        #else:
             # Crear un Embed para mostrar un mensaje de error si el usuario no ha iniciado sesión
-            error_embed = discord.Embed(title="Error", color=discord.Color.red())
-            error_embed.description = "No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero."
-            await ctx.send(embed=error_embed)
+            #error_embed = discord.Embed(title="Error", color=discord.Color.red())
+            #error_embed.description = "No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero."
+            #await ctx.send(embed=error_embed)

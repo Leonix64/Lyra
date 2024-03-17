@@ -9,7 +9,7 @@ from .Login import usuarios_autenticados
 def Join_Llamada(bot):
     @bot.command()
     async def unirse(ctx):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             # Verifica si el autor del comando está en un canal de voz
             if ctx.author.voice is None:
                 # Obtener el color correspondiente al comando
@@ -56,8 +56,8 @@ def Join_Llamada(bot):
                 await ctx.send(embed=embed)
             print('-------------------------------------------------------')
 
-        else:
-            await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
+        #else:
+            #await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
 
 # ***********************************************
 # **    Comando para Salir del Canal de Voz    **
@@ -65,7 +65,7 @@ def Join_Llamada(bot):
 def Exit_Call(bot):
     @bot.command()
     async def salir(ctx):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             # Verifica si el bot está en un canal de voz
             if ctx.voice_client is not None:
                 try:
@@ -105,5 +105,5 @@ def Exit_Call(bot):
                 )
                 await ctx.send(embed=embed)
             print('-------------------------------------------------------')
-        else:
-            await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
+        #else:
+            #await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")

@@ -12,7 +12,7 @@ from .Login import usuarios_autenticados
 def Lyra_Info(bot):
     @bot.command()
     async def Lyra(ctx):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             try:
                 # Mostrando "Escribiendo..."
                 async with ctx.typing():
@@ -36,8 +36,8 @@ def Lyra_Info(bot):
                 embed_error = discord.Embed(title="Error", color=color_error)
                 embed_error.add_field(name="Error al obtener la información del bot", value=str(e), inline=False)
                 await ctx.send(embed=embed_error)
-        else:
-            await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
+        #else:
+            #await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
 
 # ***************************************************************
 # **    Comando para Solicitar la Información de un Usuario    **
@@ -45,7 +45,7 @@ def Lyra_Info(bot):
 def User_Info(bot):
     @bot.command()
     async def userinfo(ctx, member: discord.Member = None):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             try:
                 # Mostrando "Escribiendo..."
                 async with ctx.typing():
@@ -106,8 +106,8 @@ def User_Info(bot):
                 embed_error.add_field(name="Error al obtener la información del usuario", value=str(e), inline=False)
                 await ctx.send(embed=embed_error)
 
-        else:
-            await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
+        #else:
+            #await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
 
 # ***********************************************************************
 # **    Comando para Solicitar la Información del Bot de Servidores    **
@@ -115,7 +115,7 @@ def User_Info(bot):
 def Estadisticas_Bot_Info(bot):
     @bot.command()
     async def stats(ctx):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             try:
                 # Mostrando "Escribiendo..."
                 async with ctx.typing():
@@ -148,8 +148,8 @@ def Estadisticas_Bot_Info(bot):
                 embed_error = discord.Embed(title="Error", color=color_error)
                 embed_error.add_field(name="Error al obtener las estadísticas", value=str(e), inline=False)
                 await ctx.send(embed=embed_error)
-        else:
-            await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
+        #else:
+            #await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
 
 # **********************************************************
 # **    Comando para Mostrar Estadísticas Del Servidor    **
@@ -157,7 +157,7 @@ def Estadisticas_Bot_Info(bot):
 def Server_Info(bot):
     @bot.command()
     async def estadisticas(ctx):
-        if ctx.author.id in usuarios_autenticados:
+        #if ctx.author.id in usuarios_autenticados:
             try:
                 # Mostrando "Escribiendo..."
                 async with ctx.typing():
@@ -198,8 +198,8 @@ def Server_Info(bot):
                 embed_error = discord.Embed(title="Error", color=color_error)
                 embed_error.add_field(name="Error al dar las estadísticas", value=str(e), inline=False)
                 await ctx.send(embed=embed_error)
-        else:
-            await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
+        #else:
+            #await ctx.send("No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero.")
 
 # ***************************************************************
 # **    Comando para Solicitar Ayuda con Comandos Generales    **
