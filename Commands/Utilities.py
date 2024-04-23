@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 from embed import color_Embed
-from .Login import usuarios_autenticados
 
 # *****************************************
 # **    Comando para limpiar mensajes    **
@@ -9,7 +8,6 @@ from .Login import usuarios_autenticados
 def Limpia_Mensajes(bot):
     @bot.command()
     async def clear(ctx, amount: int):
-        #if ctx.author.id in usuarios_autenticados:
             try:
                 # Obtener el color correspondiente al comando
                 color_tuple = color_Embed["clear"]
@@ -59,9 +57,4 @@ def Limpia_Mensajes(bot):
 
                 # Enviar el embed como mensaje de error
                 await ctx.send(embed=error_embed)
-        #else:
-            # Crear un Embed para mostrar un mensaje de error si el usuario no ha iniciado sesión
-            #error_embed = discord.Embed(title="Error", color=discord.Color.red())
-            #error_embed.description = "No tienes permiso para usar este comando protegido. Por favor, inicia sesión primero."
-            #await ctx.send(embed=error_embed)
 

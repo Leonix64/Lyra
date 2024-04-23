@@ -10,7 +10,6 @@ from Commands.Call import *
 from Commands.Entertainment import *
 from Commands.Greetings import *
 from Commands.Information import *
-from Commands.Login import *
 from Commands.Roles import *
 from Commands.Security import *
 from Commands.Utilities import *
@@ -55,10 +54,6 @@ Code_QR(bot)  # @Lyra QR <contenido>
 Password(bot)  # @Lyra password <int>
 Anonimo(bot)  # @Lyra mensaje_anonimo <#canal> <contenido>
 Code_Morse(bot)  # @Lyra morse <contenido>
-Login(bot)  # @Lyra login <password>
-Special(bot)  # @Lyra especial (comando de testeo en seguridad de login)
-Registro(bot)  # @Lyra register <password>
-Logout(bot)  # @Lyra logout
 
 # /=== Roles  ===/
 Mostrar_Roles(bot)  # @Lyra roles
